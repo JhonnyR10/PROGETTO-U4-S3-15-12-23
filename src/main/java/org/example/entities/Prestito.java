@@ -10,11 +10,11 @@ public class Prestito {
     @GeneratedValue
     private long prestitoId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private Utente utente;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "elemento_id")
     private ElementoDellaBiblioteca elementoPrestato;
 

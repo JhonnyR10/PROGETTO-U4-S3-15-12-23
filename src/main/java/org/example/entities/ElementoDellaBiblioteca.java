@@ -14,7 +14,7 @@ public abstract class ElementoDellaBiblioteca {
     private String titolo;
     private int annoPubblicazione;
     private int numeroPagine;
-    @OneToMany(mappedBy = "elementoPrestato")
+    @OneToMany(mappedBy = "elementoPrestato", cascade = CascadeType.ALL)
     private List<Prestito> prestito;
 
     public ElementoDellaBiblioteca() {
