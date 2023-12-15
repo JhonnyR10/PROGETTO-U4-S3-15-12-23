@@ -68,24 +68,24 @@ public class ElementoDellaBibliotecaDAO {
         return query.getResultList();
     }
 
-    public List<ElementoDellaBiblioteca> searchByPublicationYear(int year) {
+    public List<ElementoDellaBiblioteca> searchByPublicationYear(int anno) {
         TypedQuery<ElementoDellaBiblioteca> query = em.createQuery(
-                "SELECT e FROM ElementoDellaBiblioteca e WHERE e.annoPubblicazione = :year", ElementoDellaBiblioteca.class);
-        query.setParameter("year", year);
+                "SELECT e FROM ElementoDellaBiblioteca e WHERE e.annoPubblicazione = :anno", ElementoDellaBiblioteca.class);
+        query.setParameter("anno", anno);
         return query.getResultList();
     }
 
-    public List<ElementoDellaBiblioteca> searchByAuthor(String author) {
+    public List<ElementoDellaBiblioteca> searchByAuthor(String autore) {
         TypedQuery<ElementoDellaBiblioteca> query = em.createQuery(
-                "SELECT e FROM ElementoDellaBiblioteca e WHERE e.autore = :author", ElementoDellaBiblioteca.class);
-        query.setParameter("author", author);
+                "SELECT e FROM ElementoDellaBiblioteca e WHERE e.autore = :autore", ElementoDellaBiblioteca.class);
+        query.setParameter("autore", autore);
         return query.getResultList();
     }
 
-    public List<ElementoDellaBiblioteca> searchByTitle(String title) {
+    public List<ElementoDellaBiblioteca> searchByTitle(String titolo) {
         TypedQuery<ElementoDellaBiblioteca> query = em.createQuery(
-                "SELECT e FROM ElementoDellaBiblioteca e WHERE LOWER(e.titolo) LIKE LOWER(:title)", ElementoDellaBiblioteca.class);
-        query.setParameter("title", "%" + title + "%");
+                "SELECT e FROM ElementoDellaBiblioteca e WHERE LOWER(e.titolo) LIKE LOWER(:titolo)", ElementoDellaBiblioteca.class);
+        query.setParameter("titolo", "%" + titolo + "%");
         return query.getResultList();
     }
 }
