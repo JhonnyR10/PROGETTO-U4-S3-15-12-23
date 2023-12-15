@@ -1,6 +1,7 @@
 package org.example.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -13,6 +14,8 @@ public abstract class ElementoDellaBiblioteca {
     private String titolo;
     private int annoPubblicazione;
     private int numeroPagine;
+    @OneToMany(mappedBy = "elementoPrestato")
+    private List<Prestito> prestito;
 
     public ElementoDellaBiblioteca() {
     }
